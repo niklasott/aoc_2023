@@ -5,7 +5,6 @@ with open("dec6/dec6_input.txt") as f:
   times = int(''.join(times))
   distances = int(''.join(distances))
 
-
 # 940200 = held * (71530 - held)
 # 0 = 71530*held - 1held^2  - 940200 | -1
 # 0 = held^2 - 71530*held + 940200

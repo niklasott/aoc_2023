@@ -7,7 +7,8 @@ def calc_entropy(hand):
   value, counts = np.unique(hand, return_counts=True)
   value = np.flip(value)
   counts = np.flip(counts)
-  ix = 0  
+  # changes to pt1:
+  # if hand has joker, add the amount of joker to the highest count of other cards to get maximum score 
   if (value[-1] == 1) & (len(value) > 1) :
     ix_of_card_to_change = counts[:-1].argmax()
     counts[ix_of_card_to_change] += counts[-1]

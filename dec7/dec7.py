@@ -39,12 +39,14 @@ with open("actual_input.txt") as f:
     hand, bid = line.split()
     hand = [*hand]
     hand = [to_value(e) for e in hand]
+    # keep the data together ( hand | bid | entropy )
     game.append([hand, int(bid), calc_entropy(hand)])
 
 
 # the two criteria for sorting
 game.sort(key=lambda i: (get_entropy(i) ,get_cards(i)))
 
+# setting the ranks and calculating the total winnings 
 rank = 1
 total_sum = 0
 for h in game:
